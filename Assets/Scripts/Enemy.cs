@@ -4,22 +4,26 @@ using UnityEngine;
 public class Enemy : MonoBehaviour
 {
     [SerializeField] private float _speed;
-    [SerializeField] private float _limitPosition = 0f;
 
+    private Target _target;
     private Vector3 _direction;
 
-    public event Action<Enemy> FellOverEdge;
+    private readonly float _limitDistance = 0.1f;
+
+    public event Action<Enemy> CaughtTarget;
 
     private void Update()
     {
-        transform.Translate(_speed * Time.deltaTime * _direction.normalized);
+        _direction = (_target.transform.position - transform.position).normalized;
+        transform.Translate(_direction * _speed * Time.deltaTime);
 
-        if (transform.position.y < _limitPosition)
-            FellOverEdge?.Invoke(this);
+        float distance = (_target.transform.position - transform.position).sqrMagnitude;
+        if (distance < _limitDistance)
+            CaughtTarget?.Invoke(this);
     }
 
-    public void SetDirection(Vector3 direction)
+    public void SetTarget(Target target)
     {
-        _direction = direction;
+        _target = target;
     }
 }

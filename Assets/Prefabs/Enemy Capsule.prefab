@@ -14,8 +14,8 @@ GameObject:
   - component: {fileID: 6966200636452738763}
   - component: {fileID: -2475831872429048983}
   - component: {fileID: 7286373550727453624}
-  m_Layer: 0
-  m_Name: Enemy
+  m_Layer: 3
+  m_Name: Enemy Capsule
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -30,7 +30,7 @@ Transform:
   m_GameObject: {fileID: 1064985904555189843}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 1.5, z: 0}
+  m_LocalPosition: {x: 5, y: 1.5, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -69,7 +69,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: f9d49adfb08404e4a8a2375fc0a20793, type: 2}
+  - {fileID: 2100000, guid: 670bb15e3868d65438f7685c04c2611e, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -156,4 +156,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: Assembly-CSharp::Enemy
   _speed: 10
-  _limitPosition: 0
